@@ -3,14 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>StackOverflow Parser</title>
+  <link href = "style.css" rel = "stylesheet" type = "text/css">
 </head>
 <body>
-  <h1>StackOverflow answer:</h1>
-  <form action="/stackoverflow_get_request" method="post">
-    <input type = "text" name = "problem" placeholder="Ваш запрос">
-    <button type = "submit">
-      Запросить
-    </button>
-  </form>
+  <div class = "wrapper">
+    <main class = "page-main main">
+      <h1 class = "main__header">StackOverflow answer:</h1>
+      <form action="/stackoverflow_get_request" method="post" class = "main__form form">
+        <input type = "text" name = "problem" placeholder="Ваш запрос" class = "form__input" >
+        <button type = "submit" class = "form__button">
+          Запросить
+        </button>
+      </form>
+      <div>
+          {{html_text}}
+        </div>
+    </main>
+  </div>
 </body>
 </html>
