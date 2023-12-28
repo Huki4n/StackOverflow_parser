@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Roboto+Slab&family=Titan+One&display=swap');
+
+body{
+  background: rgb(38, 38, 38);
+  font-family: "Chakra Petch",sans-serif;
+  color: white;
+}
+.main__form {
+  margin-bottom: 2rem;
+}
+.main__header{
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+.form__input{
+  font-size: 20px;
+  background: none;
+  border-radius: 3px;
+  border: 2px solid white;
+  color: white;
+
+   font-family: 'Chakra Petch', sans-serif;
+}
+.form__input::placeholder{
+  color: rgb(150, 150, 150);
+}
+.form__button {
+  position: relative;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #0db9f0, #e85ce9) 1;
+  background: none;
+  color: #d1d1d1;
+  font-size: 18px;
+  vertical-align: bottom;
+
+  padding: 5px 10px;
+  transition: color 150ms linear;
+}
+.form__button:hover {
+    color: white;
+}
+.form__button:before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #0db9f0, #e85ce9);
+  transition: opacity,box-shadow 150ms linear;
+  z-index: -1000;
+}
+.form__button:hover:before {
+  opacity: 1;
+  box-shadow: -25px 4px 40px -3px #0db9f0,25px 4px 40px -3px #e85ce9;
+}
