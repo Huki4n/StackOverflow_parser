@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-session = requests.Session() # запуск сессии
+
 
 #Авторизация
 login_url = 'https://stackoverflow.com/users/login'
@@ -13,10 +13,10 @@ login_data = {
     'email': "ggag22221@mail.ru",
     'password': "parsman123"
 }
-autorization = session.post(login_url, data=login_data) # авторизация
-
 def getAnswersForRequests(request):
-  global session
+  deleteAnswers()
+  session = requests.Session()  # запуск сессии
+  autorization = session.post(login_url, data=login_data)  # авторизация
   session = session.get(f"https://stackoverflow.com/search?q={request}") # получаем страницу со всеми ответами
 
   soup = BeautifulSoup(session.text,"lxml") # форматируем для работы в bs4
@@ -34,3 +34,8 @@ def getAnswersForRequests(request):
           file.write(str(html))
 
 
+def deleteAnswers():
+  if os.path.exists(f'templates/answer1.html'):
+    for i in range(1,4):
+      file = open(f'templates/answer{i}.html', 'w', encoding="utf-8") #сохраняем в файлы
+      file.write('')

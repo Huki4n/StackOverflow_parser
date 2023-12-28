@@ -1,6 +1,5 @@
-import time
-from flask import Flask, render_template, request, redirect
-import requests
+from flask import Flask,render_template, request, redirect
+
 from parser import *
 
 app = Flask(__name__)
@@ -12,7 +11,6 @@ def form():
 @app.post("/stackoverflow_get_request")
 def get_request():
   getAnswersForRequests(request.form['problem'])
-
   return redirect("/stackoverflow_set_request")
 
 
