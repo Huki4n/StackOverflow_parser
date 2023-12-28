@@ -1,44 +1,21 @@
 
-<p>Assuming you want to install SQL Server 2008 Express, you can use a <a href="http://geekswithblogs.net/Wchrabaszcz/archive/2012/12/12/sql-2008-express-silent-installation.aspx" rel="nofollow">silent install</a> from a <a href="http://helpnet.installshield.com/installshield16helplib/IHelpInsertCARulesEXE.htm" rel="nofollow">custom action</a>:</p>
-<pre><code>Setup.exe /ConfigurationFile=SQLExpress.ini /Q
-</code></pre>
-<p>with your SQLExpress.ini file looking like this:</p>
-<pre><code>[SQLSERVER2008] 
-INSTANCEID="SQLExpress" 
-ACTION="Install" 
-FEATURES=SQLENGINE 
-HELP="False" 
-INDICATEPROGRESS="False" 
-QUIET="False" 
-QUIETSIMPLE="False" 
-X86="True" 
-PCUSOURCE="C:\install\SqlExpress_2008\PCUSOURCE" 
-ERRORREPORTING="False" 
-INSTALLSHAREDDIR="C:\Program Files (x86)\Microsoft SQL Server" 
-INSTANCEDIR="C:\Program Files (x86)\Microsoft SQL Server" 
-SQMREPORTING="False" 
-INSTANCENAME="SQLEXPRESS" 
-AGTSVCSTARTUPTYPE="Manual" 
-ISSVCSTARTUPTYPE="Automatic" 
-ISSVCACCOUNT="NT AUTHORITY\NetworkService" 
-ASSVCSTARTUPTYPE="Automatic" 
-ASCOLLATION="Latin1_General_CI_AS" 
-ASDATADIR="Data" 
-ASLOGDIR="Log" 
-ASBACKUPDIR="Backup" 
-ASTEMPDIR="Temp" 
-ASCONFIGDIR="Config" 
-ASPROVIDERMSOLAP="1" 
-SQLSVCSTARTUPTYPE="Automatic" 
-FILESTREAMLEVEL="0" 
-ENABLERANU="True" 
-SQLCOLLATION="SQL_Latin1_General_CP1_CI_AS" 
-SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" 
-SQLSYSADMINACCOUNTS="DOMAIN\Administrator" 
-ADDCURRENTUSERASSQLADMIN="False" 
-TCPENABLED="0" 
-NPENABLED="0" 
-BROWSERSVCSTARTUPTYPE="Disabled" 
-RSSVCSTARTUPTYPE="Automatic" 
-RSINSTALLMODE="FilesOnlyMode"
-</code></pre>
+<p>I found some articles to be of major use:</p>
+<p>This link is an experience someone else had:
+<a href="http://goneale.com/2009/05/24/cant-install-microsoft-sql-server-2008-management-studio-express/" rel="nofollow noreferrer">http://goneale.com/2009/05/24/cant-install-microsoft-sql-server-2008-management-studio-express/</a></p>
+<p>This link has the exact steps involved to install everything properly:
+<a href="http://www.codefrenzy.net/2011/06/03/how-to-install-sql-server-2008-management-studio/" rel="nofollow noreferrer">http://www.codefrenzy.net/2011/06/03/how-to-install-sql-server-2008-management-studio/</a></p>
+<p>This link confirms the previous link:
+<a href="https://superuser.com/questions/88244/installing-sql-server-management-studio-when-vs2010-beta-2-is-already-installed">https://superuser.com/questions/88244/installing-sql-server-management-studio-when-vs2010-beta-2-is-already-installed</a></p>
+<p><strong>My Instructions</strong> </p>
+<p>I am not sure if my instructions will be 100% accurate, but in my instance, because I installed VS2010 on a fresh copy of Windows 7, the VS2010 installer installs SQL Server 2008 Express for you, so from this point I just need the Management Studio.</p>
+<p>What I gathered from these explanations is to do the following:</p>
+<ol>
+<li><p>Download the SQL Server Management Studio install from
+<a href="http://www.microsoft.com/download/en/details.aspx?id=22973" rel="nofollow noreferrer">http://www.microsoft.com/download/en/details.aspx?id=22973</a></p></li>
+<li><p>Run the setup, when you get to the point where it asks you to "<strong>Perform a new installation of SQL Server 2008</strong>" or "<strong>Add features to an existing instance of SQL Server 2008</strong>", this part is the CONFUSING PART (HEY MICROSOFT TAKE NOTES, DON'T DO THIS KIND OF STUFF). </p>
+<p>As much as you want to select "Add features to an existing instance of SQL Server 2008" <em>DON'T!!!!</em></p>
+<p>You need to select "<strong>Perform a new installation of SQL Server 2008</strong>". It doesn't sound right I know - it is very confusing and counter intuitive, but this seems to be the way to install management studio. :(</p></li>
+<li><p>Press next until you see the features selection portion. Heeeeeyyyy look at that, it has a check box for Management Studio. It should be selected already, if not then select it of course and press next.</p></li>
+<li><p>Press Next next next next next next... basically just install it at this point.</p></li>
+<li><p>Enjoy, it has installed.</p></li>
+</ol>
