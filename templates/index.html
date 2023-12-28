@@ -11,7 +11,9 @@
     <main class = "page-main main">
       <h1 class = "main__header">StackOverflow answer:</h1>
       <form action="/stackoverflow_get_request" method="post" class = "main__form form">
-        <input type = "text" name = "problem" placeholder="Ваш запрос" class = "form__input" >
+        <label>
+          <input type = "text" name = "problem" placeholder="Ваш запрос" class = "form__input" >
+        </label>
         <button type = "submit" class = "form__button">
           Request
         </button>
@@ -19,15 +21,15 @@
       <div class = "main__answers answers">
         <div class = "answers__item">
           <span class = "answers__number-text">Answer 1</span>
-          {% include 'answer1.html' %}
+          {% include 'new_answers/answer1.html' %}
         </div>
         <div class = "answers__item">
           <span class = "answers__number-text">Answer 2</span>
-          {% include 'answer2.html' %}
+          {% include 'new_answers/answer2.html' %}
         </div>
         <div class = "answers__item">
           <span class = "answers__number-text">Answer 3</span>
-          {% include 'answer3.html' %}
+          {% include 'new_answers/answer3.html' %}
         </div>
       </div>
     </main>

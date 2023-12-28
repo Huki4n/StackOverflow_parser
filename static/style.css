@@ -4,6 +4,7 @@ body{
   background: rgb(38, 38, 38);
   font-family: "Chakra Petch",sans-serif;
   color: white;
+  font-size: 24px;
 }
 a{
   color: #4776da;
@@ -90,6 +91,7 @@ a>code{
 }
 .answers__item>ul>li{
   margin-bottom: 15px;
+  font-size: 16px;
 }
 .answers__item>pre{
   display: grid;
@@ -99,4 +101,5 @@ a>code{
   padding: 10px 20px;
   background: rgb(31, 31, 31);
   border-radius: 10px;
+  font-size: 16px;
 }

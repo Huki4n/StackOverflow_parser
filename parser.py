@@ -29,6 +29,6 @@ def getAnswersForRequests(request):
     div = soup.find("div", class_="answer").find("div", class_="s-prose js-post-body")  # вырезаем div с ответом
 
     counter += 1
-    file = open(f'templates/answer{counter}.html', 'w', encoding="utf-8")  # сохраняем в файлы
+    file = open(f'templates/new_answers/answer{counter}.html', 'w', encoding="utf-8")  # сохраняем в файлы
     for html in div:
       file.write(str(html))

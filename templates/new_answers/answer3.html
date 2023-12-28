@@ -1,0 +1,44 @@
+
+<p>Assuming you want to install SQL Server 2008 Express, you can use a <a href="http://geekswithblogs.net/Wchrabaszcz/archive/2012/12/12/sql-2008-express-silent-installation.aspx" rel="nofollow">silent install</a> from a <a href="http://helpnet.installshield.com/installshield16helplib/IHelpInsertCARulesEXE.htm" rel="nofollow">custom action</a>:</p>
+<pre><code>Setup.exe /ConfigurationFile=SQLExpress.ini /Q
+</code></pre>
+<p>with your SQLExpress.ini file looking like this:</p>
+<pre><code>[SQLSERVER2008] 
+INSTANCEID="SQLExpress" 
+ACTION="Install" 
+FEATURES=SQLENGINE 
+HELP="False" 
+INDICATEPROGRESS="False" 
+QUIET="False" 
+QUIETSIMPLE="False" 
+X86="True" 
+PCUSOURCE="C:\install\SqlExpress_2008\PCUSOURCE" 
+ERRORREPORTING="False" 
+INSTALLSHAREDDIR="C:\Program Files (x86)\Microsoft SQL Server" 
+INSTANCEDIR="C:\Program Files (x86)\Microsoft SQL Server" 
+SQMREPORTING="False" 
+INSTANCENAME="SQLEXPRESS" 
+AGTSVCSTARTUPTYPE="Manual" 
+ISSVCSTARTUPTYPE="Automatic" 
+ISSVCACCOUNT="NT AUTHORITY\NetworkService" 
+ASSVCSTARTUPTYPE="Automatic" 
+ASCOLLATION="Latin1_General_CI_AS" 
+ASDATADIR="Data" 
+ASLOGDIR="Log" 
+ASBACKUPDIR="Backup" 
+ASTEMPDIR="Temp" 
+ASCONFIGDIR="Config" 
+ASPROVIDERMSOLAP="1" 
+SQLSVCSTARTUPTYPE="Automatic" 
+FILESTREAMLEVEL="0" 
+ENABLERANU="True" 
+SQLCOLLATION="SQL_Latin1_General_CP1_CI_AS" 
+SQLSVCACCOUNT="NT AUTHORITY\NETWORK SERVICE" 
+SQLSYSADMINACCOUNTS="DOMAIN\Administrator" 
+ADDCURRENTUSERASSQLADMIN="False" 
+TCPENABLED="0" 
+NPENABLED="0" 
+BROWSERSVCSTARTUPTYPE="Disabled" 
+RSSVCSTARTUPTYPE="Automatic" 
+RSINSTALLMODE="FilesOnlyMode"
+</code></pre>
