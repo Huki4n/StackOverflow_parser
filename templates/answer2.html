@@ -1,0 +1,14 @@
+<p>To get a <em>new</em> reversed list, apply the <a href="https://docs.python.org/3/library/functions.html#reversed" rel="noreferrer"><code>reversed</code></a> function and collect the items into a <a href="https://docs.python.org/3/library/stdtypes.html#list" rel="noreferrer"><code>list</code></a>:</p>
+<pre><code>&gt;&gt;&gt; xs = [0, 10, 20, 40]
+&gt;&gt;&gt; list(reversed(xs))
+[40, 20, 10, 0]
+</code></pre>
+<p>To iterate backwards through a list:</p>
+<pre><code>&gt;&gt;&gt; xs = [0, 10, 20, 40]
+&gt;&gt;&gt; for x in reversed(xs):
+...     print(x)
+40
+20
+10
+0
+</code></pre>

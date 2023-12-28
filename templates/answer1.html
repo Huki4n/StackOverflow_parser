@@ -1,0 +1,18 @@
+<p>Use the built-in <a href="https://docs.python.org/library/functions.html#reversed" rel="noreferrer"><code>reversed()</code></a> function:</p>
+<pre><code>&gt;&gt;&gt; a = ["foo", "bar", "baz"]
+&gt;&gt;&gt; for i in reversed(a):
+...     print(i)
+... 
+baz
+bar
+foo
+</code></pre>
+<p>To also access the original index, use <a href="https://docs.python.org/library/functions.html#enumerate" rel="noreferrer"><code>enumerate()</code></a> on your list before passing it to <code>reversed()</code>:</p>
+<pre><code>&gt;&gt;&gt; for i, e in reversed(list(enumerate(a))):
+...     print(i, e)
+... 
+2 baz
+1 bar
+0 foo
+</code></pre>
+<p>Since <code>enumerate()</code> returns a generator and generators can't be reversed, you need to convert it to a <code>list</code> first.</p>

@@ -11,7 +11,8 @@ def form():
 
 @app.post("/stackoverflow_get_request")
 def get_request():
-  getHTMLfile(request.form['problem'])
+  getAnswersForRequests(request.form['problem'])
+
   return redirect("/stackoverflow_set_request")
 
 

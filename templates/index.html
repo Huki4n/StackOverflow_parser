@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>StackOverflow Parser</title>
+  <link href="../static/reset.css" rel="stylesheet" type = "text/css" >
   <link href = "../static/style.css" rel = "stylesheet" type = "text/css">
 </head>
 <body>
@@ -15,9 +16,20 @@
           Request
         </button>
       </form>
-      <div>
-          {{html_text}}
+      <div class = "main__answers answers">
+        <div class = "answers__item">
+          <span class = "answers__number-text">Answer 1</span>
+          {% include 'answer1.html' %}
         </div>
+        <div class = "answers__item">
+          <span class = "answers__number-text">Answer 2</span>
+          {% include 'answer2.html' %}
+        </div>
+        <div class = "answers__item">
+          <span class = "answers__number-text">Answer 3</span>
+          {% include 'answer3.html' %}
+        </div>
+      </div>
     </main>
   </div>
 </body>
